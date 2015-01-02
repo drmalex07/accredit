@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:py="http://genshi.edgewall.org/" 
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:i18n="http://genshi.edgewall.org/i18n"
+  >
+  
+  <py:match path="head" once="true" >
+  <head>
+    ${select('*')}
+    <script type="text/javascript">
+        $(document).ready(function() { console.log('The DOM is loaded!') }) 
+    </script>
+  </head>
+  </py:match>
+
+  <py:match path="body/div[@id='content']" once="true" >
+  <div id="${select('@id')}" class="${select('@class')}">
+    <p>This is an index page!</p>
+  </div> 
+  </py:match>
+  
+  <xi:include href="../base.html" />
+
+</html>

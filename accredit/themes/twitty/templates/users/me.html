@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:py="http://genshi.edgewall.org/" 
+    xmlns:xi="http://www.w3.org/2001/XInclude" 
+    xmlns:i18n="http://genshi.edgewall.org/i18n"
+  >
+
+  <xi:include href="../include-bootstrap.html" />  
+  
+  <py:match path="head" once="true" >
+  <head>
+    ${select('*')} 
+    <title>Me!</title>
+    <style>
+        h1 span.small, h2 span.small, h4 span.small { 
+            font-size: 12px; 
+            font-weight: normal; 
+            padding: 0px 12px 
+        }
+        p.small { font-size: 10px; color: #777; }
+        h4 { margin-top: 20px; }
+    </style>
+  </head>
+  </py:match>
+
+  <py:match path="body/div[@id='content']" once="true" >
+  <div id="${select('@id')}" class="page ${select('@class')}">
+
+  <h1>${c.my_username} - ${c.my_display_name}<span class='small'><a href="${c.logout_url}">Logout</a></span></h1>  
+  
+  <py:with vars="messages = h.flash.pop_messages()">
+  <py:for each="msg in messages">
+  <p class="alert alert-${'info' if msg.category == 'notice' else msg.category}">${msg}</p>
+  </py:for>
+  </py:with>
+
+  <h4>You have been identified as:</h4>
+  
+  <table class="kv-pairs"> 
+     <tr><td>Username:</td><td>${c.my_username}</td></tr>
+     <tr><td>Name:</td><td>${c.my_display_name or _('n/a')}</td></tr>
+     <tr><td>Identity URI:</td><td><code>${c.my_identity.get_uri()}</code></td></tr>
+     <tr><td>repoze.who.userid:</td><td><code>${c.my_userid}</code></td></tr>
+  </table>
+
+  <h4>You have granted trust to the following applications (realms/domains):</h4>
+  
+  <p>
+    <a href="${c.add_trust_url}">Add</a>&nbsp;
+    <a href="${c.clear_trust_url}">Clear</a>
+  </p>
+
+  <table class="table table-bordered" id="table-user-grants">
+      <tr><th>Application</th><th>Trust</th><th>Operations</th></tr>
+      <py:for each="realm,policy,edit_url,clear_url in c.my_grants">
+      <tr><td><code>${realm}</code></td><td>${policy}</td><td>
+        <a href="${edit_url}">edit</a>&nbsp;
+        <a href="${clear_url}">clear</a></td>
+      </tr>
+      </py:for>
+      <py:if test="len(c.my_grants) == 0">
+      <tr><td colspan="3"><em>No trusts found</em></td></tr>
+      </py:if>
+  </table>
+
+  </div>
+  </py:match>
+
+  <xi:include href="../base.html" />
+
+</html>

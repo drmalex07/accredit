@@ -1,0 +1,156 @@
+body { 
+    font-size: 12px; 
+    line-height: 1.4em;
+    font-family: sans-serif; 
+    background: #f0f0f0;
+}
+
+h1 { font-size: 24px; }
+h2 { font-size: 20px; }
+h3 { font-size: 16px; }
+
+dt { font-weight: bold }
+
+pre {
+    font-size: 10px;
+}
+
+.page {
+    width: 63%;
+    margin: auto;
+    padding: 15px 33px;
+    border: solid 1px #ddd;
+    background: #fff;
+}
+
+.page a,
+.page a:visited {
+    color: #1970A7;
+    text-decoration: none;
+}
+.page a:hover {
+    color: #12547E;
+    text-decoration: underline;
+}
+
+
+/* Tables */
+
+table {
+    margin: 12px 0px;
+    padding: 4px 8px;
+    border-spacing: 0px 0px;
+}
+
+table td { padding: 0.5em 0.6em; }
+table th { padding: 0.9em 0.6em; }
+
+table.kv-pairs {
+    border: 1px solid #bbb;
+}
+table.kv-pairs th {
+    border-bottom: 1px solid #bbb;
+}
+table.kv-pairs td, 
+table.kv-pairs th {
+    padding: 0.5em;
+    text-align: left;
+}
+table.kv-pairs tr td:first-child {
+    font-weight: bold;
+}
+
+/* Messages */
+
+.alert {
+   padding: 1em;
+   margin: .5em 0em;
+   border: 1px solid #e7dc2b;
+   background: #fff888;
+}
+.alert-error {
+    border: 1px solid #ff0000;
+    background: #ffaaaa;
+}
+.alert-warning {
+    border: 1px solid #ff0000;
+    background: #ffaaaa;
+}
+.alert-info, 
+.alert-notice {
+    border: 1px solid #8585ad;
+    background: #eeeeff;
+}
+.alert-success {
+    border: 1px solid #7da428;
+    background: #ceef84;
+}
+
+/* Forms */
+
+fieldset {
+    margin: 15px 0px;
+    border: solid 1px #bbb;
+}
+input + label {
+   vertical-align: text-bottom; 
+}       
+form { 
+    padding: 10px 20px; 
+    border: solid 1px silver;
+    background: #fff;
+}
+form input, 
+form select { 
+    padding: 5px 5px;
+    font-family: sans-serif;
+    font-size: inherit;
+    
+}
+form input[type="text"], 
+form input[type="password"] {
+    border: solid 1px #aaa; 
+    width: 250px; 
+}
+form input[type="button"]:hover,
+form input[type="submit"]:hover,
+form input.btn:hover { 
+    cursor: pointer; 
+}
+
+legend {
+    font-weight: bold;
+}
+
+.control-group {
+    margin: 5px 0px;
+}
+.control-group > label {
+    display: block;
+    float:left;
+    width:170px;
+    font-weight: bold;
+    padding: 3px 0px;
+}
+
+.control-group > input,
+.control-group > select,
+.control-group > textarea {
+    display: inline-block;
+}
+
+fieldset.fieldset-attrs-check table {
+    margin: 5px 0px;
+}
+fieldset.fieldset-attrs-check table th {
+    text-align: left;
+    border: solid #bbb;
+    border-width: 0px 0px 0px 0px;
+}
+fieldset.fieldset-attrs-check table td { 
+    padding: 0.2em 0.9em;
+}
+fieldset.fieldset-attrs-check table td.td-checkbox { 
+    padding: 0.2em 0.1em;
+}
+

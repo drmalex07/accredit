@@ -1,0 +1,3 @@
+include accredit/config/deployment.ini_tmpl
+recursive-include accredit/public *
+recursive-include accredit/templates *

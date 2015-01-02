@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:py="http://genshi.edgewall.org/" 
+    xmlns:xi="http://www.w3.org/2001/XInclude" 
+    xmlns:i18n="http://genshi.edgewall.org/i18n"
+  >
+
+  <py:match path="head" once="true" >
+  <head>
+    ${select('*')} 
+    <title>${c.page_title}</title>
+    <script type="text/javascript" src="/js/users/edit-trust.js"></script>
+    <style>
+        h2 { color: #555; }
+        form {
+            border: 0px;
+            padding: 0px 0px;
+        }
+        form input[name="realm"] {
+            width: 320px;
+        }
+        td code { font-size: 10px;}
+    </style>
+  </head>
+  </py:match>
+
+  <py:match path="body/div[@id='content']" once="true" >
+  <div id="${select('@id')}" class="page ${select('@class')}">
+
+  <h1>${c.page_title}</h1> 
+  
+  <form method="POST" action="${c.action}">
+    ${c.csrf_token_field}
+
+    <div class="control-group">
+        <label for="realm">Realm:</label>
+        <input py:if="c.realm" type="text" readonly="readonly" name="realm" value="${c.realm}" />
+        <input py:if="not c.realm" type="text" name="realm" value="" placeholder="https://example.com/foo" />
+    </div>
+
+    <div class="control-group">
+        <label for="allow">Allow requests:</label>
+        <select name="allow" data-default-value="${ c.policy.allow if (c.policy and c.policy.allow) else 'always' }">
+            <option value="always">Always</option>
+            <option value="never">Never</option>
+        </select> 
+        <select name="ttl">
+            <option value="3600">For the next 1 hour</option> 
+            <option value="86400">For the next 24 hours</option> 
+            <option value="1296000">For the next 15 days</option> 
+            <option value="infinity">Forever</option> 
+        </select> 
+    </div>
+    
+    <fieldset id="fieldset-exported-sreg-attrs" class="fieldset-attrs-check">
+        <legend xml:lang="en">SReg Data:</legend> 
+        <table>
+            <tr>
+                <th><!--Allow--></th>
+                <th>Attribute</th>
+            </tr>
+            <py:for each="attr in (c.known_sreg_attrs)">
+            <py:with vars="checked = 'checked' if (c.policy and (c.policy.exported_sreg_attrs) and (attr in c.policy.exported_sreg_attrs)) else None">
+            <tr>
+                <td class="td-checkbox"><input type="checkbox" value="yes" name="attr-sreg-${attr}" py:attrs="{ 'checked': checked }" /></td>
+                <td>${attr}</td>
+            </tr>
+            </py:with>
+            </py:for>
+        </table>
+    </fieldset>
+   
+     <fieldset id="fieldset-exported-ax-attrs" class="fieldset-attrs-check">
+        <legend xml:lang="en">Attribute Exchange (AX) Data:</legend>
+        <table>
+            <tr>
+                <th><!--Allow--></th>
+                <th>Attribute</th>
+                <th>Description</th>
+                <!--!<th>Type URI</th>-->
+            </tr>
+            <py:for each="attr_alias,attr_type in (c.known_ax_attrs)">
+            <py:with vars="checked = 'checked' if (c.policy and (c.policy.exported_ax_attrs) and (attr_alias in c.policy.exported_ax_attrs)) else None">
+            <tr>
+                <td class="td-checkbox"><input type="checkbox" value="yes" name="attr-ax-${attr_alias}" py:attrs="{ 'checked': checked }" /></td>
+                <td>${attr_alias}</td>
+                <td>${h.describe_ax_attr(attr_alias) or _('n/a')}</td>
+                <!--!<td><code>${attr_type}</code></td>-->
+            </tr>
+            </py:with>
+            </py:for>
+        </table>
+    </fieldset>
+   
+    <input type="submit" name="save" value="${_('Save')}"/>
+    <input type="submit" name="cancel" value="${_('Cancel')}"/>
+  </form>
+
+  </div>
+  </py:match>
+
+  <xi:include href="../base.html" />
+
+</html>

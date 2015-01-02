@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xrds:XRDS
+    xmlns:xrds="xri://$xrds"
+    xmlns="xri://$xrd*($v*2.0)"
+    xmlns:py="http://genshi.edgewall.org/" > 
+  <XRD>
+    <Service priority="0">
+      <Type>${primary_type}</Type>
+      <Type py:if="secondary_type">${secondary_type}</Type>
+      <URI>${server_uri}</URI>
+      <LocalID py:if="local_id">${local_id}</LocalID>
+    </Service>
+  </XRD>
+</xrds:XRDS>

@@ -1,0 +1,101 @@
+body { 
+    background: #f0f0f0;
+}
+
+h1 { font-size: 22px; }
+h2 { font-size: 19px; }
+h3 { font-size: 16px; }
+h4 { font-size: 13px; }
+
+dt { 
+    font-weight: bold 
+}
+
+code,
+pre {
+    font-size: 12px;
+}
+
+.page {
+    width: 63%;
+    margin: 5px auto;
+    padding: 15px 33px;
+    border: solid 1px #ddd;
+    background: #fff;
+}
+
+
+/* Tables */
+
+table.kv-pairs {
+    border: 1px solid #ddd;
+}
+
+table.kv-pairs th {
+    border-bottom: 1px solid #bbb;
+}
+
+table.kv-pairs td, 
+table.kv-pairs th {
+    padding: 0.75em;
+    text-align: left;
+}
+
+table.kv-pairs tr td:first-child {
+    font-weight: bold;
+}
+
+
+/* Forms */
+
+input[type="text"],
+input[type="password"] { 
+    padding: 6px 6px;
+}
+
+input[type="text"],
+input[type="submit"],
+input[type="password"], 
+select, 
+textarea,
+button,
+label {
+    font-family: inherit;
+}
+
+.btn {
+    padding: 7px 12px;
+    border-radius: 2px;
+}
+
+select { 
+    height: 28px;
+    line-height: 28px;
+    padding: 5px 6px;
+}
+
+label.inline {
+    display: inline-block;
+    vertical-align: -10%;
+    margin: 0em 0.25em;
+}
+
+fieldset {
+    margin: 15px 0px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 2em;
+    margin-bottom: 10px;
+}
+
+fieldset.fieldset-attrs-check table th {
+}
+fieldset.fieldset-attrs-check table td { 
+}
+fieldset.fieldset-attrs-check table td.td-checkbox { 
+    width: 3%;
+}
+

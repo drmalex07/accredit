@@ -1,0 +1,26 @@
+<VirtualHost *:80>
+    ServerAdmin webmaster@localdomain
+    ServerName  id-provider-1.localdomain
+
+    DocumentRoot /var/www/
+
+    WSGIScriptAlias / /var/local/openid-provider/accredit/wsgi.py
+    WSGIPassAuthorization On
+    WSGIDaemonProcess accredit_1 user="user" processes="1" threads="4"
+    WSGIProcessGroup  accredit_1
+
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride None
+    </Directory>
+    <Directory /var/www>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride None
+        Order allow,deny
+        allow from all
+    </Directory>
+
+    ErrorLog "${APACHE_LOG_DIR}/error-id-provider-1.log"
+    LogLevel warn
+    CustomLog "${APACHE_LOG_DIR}/access-id-provider-1.log" combined
+</VirtualHost>

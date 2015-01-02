@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <style>
+    body,table { font-size: 12px; }
+    form { padding: 8px; border: solid 1px silver; width: 50%; margin: auto }
+    form td { padding: 5px; }
+    form input { border: solid 1px #aaa; padding: 2px 5px;}
+  </style>
+</head>
+<body>
+  <form method="POST" action="?__do_login=true">
+    <div>
+         <h2>Login into <em>accredit</em> app!</h2>
+    </div>
+    <table border="0">
+    <tr>
+      <td>User</td>
+      <td><input type="text" name="login"></input></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td><input type="password" name="password"></input></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="submit" name="submit" value="Login!"/></td>
+    </tr>
+    </table>
+  </form>
+  <pre>
+  </pre>
+</body>
+</html>

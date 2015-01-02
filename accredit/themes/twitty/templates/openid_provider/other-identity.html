@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:py="http://genshi.edgewall.org/" 
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:i18n="http://genshi.edgewall.org/i18n"
+  >
+
+  <xi:include href="../include-bootstrap.html" />  
+  
+  <py:match path="body/div[@id='content']" once="true" >
+  <div id="${select('@id')}" class="page ${select('@class')}">  
+    <p i18n:msg="trust_root,expected_identity,own_identity,own_identity_uri" class="alert alert-info">
+     The site at <code>${c.trust_root}</code> has asked for an identity belonging to <strong>${c.expected_identity.uid}</strong>, 
+     but you are logged-in as <strong>${c.own_identity.uid}</strong> i.e <a target="_blank" href="${c.own_identity.uri}"><code>${c.own_identity.uri}</code></a>.  
+    </p>
+    <p i18n:msg="expected_identity">
+     To login as <strong>${c.expected_identity.uid}</strong> and approve the login request, you must <a href="${h.url_for('logout')}">logout</a> first.
+    </p>
+  </div> 
+  </py:match>
+  
+  <xi:include href="../base.html" />
+
+</html>

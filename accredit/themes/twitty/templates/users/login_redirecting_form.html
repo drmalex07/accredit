@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:py="http://genshi.edgewall.org/" 
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:i18n="http://genshi.edgewall.org/i18n"
+  >
+  
+  <xi:include href="../include-bootstrap.html" />  
+  
+  <py:match path="head" once="true" >
+  <head> 
+    ${select('*')} 
+    <title>Login</title>
+    <style>
+        body { 
+            background: #fff 
+        }
+        form { 
+            background: #f3f3f3;
+            width: 27%; 
+            margin: 4px auto; 
+            border:solid 1px #ccc; 
+            padding:5px 45px 15px 45px; 
+        }
+        form table {
+            width: 70%;
+            margin: 10px auto 25px auto;
+        }
+        form td { padding: 5px; position: relative; }
+        form td.input-label { font-weight: bold; }
+        form tr { margin: 5px 0px; }
+        form #input-password, 
+        form #input-username {
+            width: 210px;
+        }
+        form #input-submit {
+            width: 224px; /* + 2* (input-h-padding=6) + 2*(input-border=1) */
+            font-weight: bold;
+        } 
+        form p.help-block {
+            color: #444;
+        }
+    </style>
+ </head>
+ </py:match>
+
+ <py:match path="body/div[@id='content']" once="true" >
+ <div id="${select('@id')}" class="${select('@class')}">
+ <form method="POST" action="${c.action}">
+    <h2 class="title text-center" i18n:msg="site_name">Login into ${h.site_name()} app!</h2>
+    <p class="help-block">Enter your credentials to login to <strong>${h.site_name()}</strong> domain.</p>
+    <table border="0">
+    <tr>
+      <td><input id="input-username" type="text" name="login" placeholder="Username"></input></td>
+    </tr>
+    <tr>
+      <td><input id="input-password" type="password" name="password" placeholder="Password"></input></td>
+    </tr>
+    <tr>
+      <td><input id="input-submit" class="btn btn-info" type="submit" name="submit" value="${_('Login!')}"/></td>
+    </tr>
+    <!--
+    <tr><td><a href="mailto:admin@example.com">Help?</a></td></tr>
+    -->
+    </table> 
+    <p class="help-block">If you are a registered user and still having trouble to login, you should <a href="${c.reset_url}">reset your password</a> and then try again.</p>
+ </form>
+ </div>
+ </py:match>
+  
+  <xi:include href="../base.html" />
+
+</html>

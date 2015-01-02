@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:py="http://genshi.edgewall.org/" 
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:i18n="http://genshi.edgewall.org/i18n"
+  >
+  
+  <py:match path="head" once="true" >
+  <head> 
+    ${select('*')} 
+    <title>Login</title>
+    <style>
+        /*form h2 { font-size: 21px; padding: 10px 0px; margin:auto }*/
+        body { background: #fff }
+        form { width: 28%; margin: auto }
+        form td { padding: 5px; }
+        form td.label { font-weight: bold; }
+        form tr { margin: 5px 0px; }
+    </style>
+ </head>
+ </py:match>
+
+ <py:match path="body/div[@id='content']" once="true" >
+ <div id="${select('@id')}" class="${select('@class')}">
+ <form method="POST" action="${c.action}">
+    <h3 i18n:msg="site_name">Login into <em>${h.site_name()}</em> app!</h3>
+    <table border="0">
+    <tr>
+      <td class="label">Username:</td>
+      <td><input type="text" name="login"></input></td>
+    </tr>
+    <tr>
+      <td class="label">Password:</td>
+      <td><input type="password" name="password"></input></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input class="btn" type="submit" name="submit" value="${_('Login!')}"/></td>
+    </tr>
+    </table>
+  </form>
+  </div>
+  </py:match>
+  
+  <xi:include href="../base.html" />
+
+</html>

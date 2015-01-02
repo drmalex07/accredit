@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:py="http://genshi.edgewall.org/" 
+    py:strip=""
+  >
+  <py:match path="head" once="true" >
+    <head>
+      ${select('*')}
+      <link type="text/css" rel="stylesheet" href="/vendor/select2-3.4.4/select2.css"/>
+      <script type="text/javascript" src="/vendor/select2-3.4.4/select2.min.js"></script>
+    </head>
+  </py:match>
+</html>

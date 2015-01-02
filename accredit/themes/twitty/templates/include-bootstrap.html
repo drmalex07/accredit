@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:py="http://genshi.edgewall.org/" 
+    py:strip=""
+  >
+  <py:match path="head" once="true" >
+    <head>
+      ${select('*')}
+      <link type="text/css" rel="stylesheet" href="/vendor/bootstrap-2.3.2/css/bootstrap.min.css"/>
+      <script type="text/javascript" src="/vendor/bootstrap-2.3.2/js/bootstrap.min.js"></script>
+      <!-- provide some local overrides for Bootstap's defaults -->
+      <link type="text/css" rel="stylesheet" href="/css/base.css" />
+    </head>
+  </py:match>
+</html>

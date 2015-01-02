@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:py="http://genshi.edgewall.org/" 
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:i18n="http://genshi.edgewall.org/i18n"
+  >
+ 
+  <xi:include href="../include-bootstrap.html" />  
+
+  <py:match path="head" once="true" >
+  <head>
+    ${select('*')} 
+    <title>Confirm</title>
+    <script type="text/javascript" src="/js/openid-provider/confirm.js"></script>
+  </head>
+  </py:match>
+
+  <py:match path="body/div[@id='content']" once="true" >
+  <div id="${select('@id')}" class="page ${select('@class')}">
+   
+    <h1>Confirm authentication request</h1>
+
+    <p class="alert alert-info" i18n:msg="trust_root">
+    The site at <strong>${c.trust_root}</strong> has asked to confirm your identity.<br/>
+    If you approve, we will assert that you control the identity URI listed below.
+    </p>
+
+    <table class="kv-pairs"> 
+        <tr><td>User:</td><td>${c.own_identity.uid}</td></tr>
+        <tr><td>Identity:</td><td><code>${c.own_identity.uri}</code></td></tr>
+        <tr><td>Trust Root:</td><td><code>${c.trust_root}</code></td></tr>
+    </table>
+
+    <form method="POST" action="${h.url_for('openid-confirm')}">
+        <input type="hidden" name="trust_root" value="${c.trust_root}" />
+         
+        <fieldset py:if="c.sreg_is_requested" id="fieldset-exported-sreg-attrs" class="fieldset-attrs-check">
+            <legend xml:lang="en">SReg Data:</legend>
+            <p>Release the following personal (registration) data:</p>
+            <table class="table">
+            <tr>
+                <th><!--Allow--></th>
+                <th>Attribute</th>
+            </tr>
+            <py:for each="field in (c.sreg_required_fields + c.sreg_optional_fields)">
+            <tr>
+                <td class="td-checkbox"><input type="checkbox" checked="checked" name="field-sreg-${field}" value="yes"/></td>
+                <td>${field}</td>
+            </tr>
+            </py:for>
+            </table>
+        </fieldset>
+        
+        <fieldset py:if="c.ax_is_requested" id="fieldset-exported-ax-attrs" class="fieldset-attrs-check">
+            <legend xml:lang="en">Attribute-Exchange (AX) Data:</legend>
+            <p>Release the following attributes:</p>
+            <table class="table">
+                <tr>
+                    <th><!--Allow--></th>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                    <!--!<th>Type URI</th>-->
+                </tr>
+                <py:for each="field_type,field_alias in (c.ax_requested_attributes)">
+                <tr>
+                    <td class="td-checkbox"><input type="checkbox" checked="checked" name="field-ax-${field_alias}" value="yes"/></td>
+                    <td>${field_alias}</td>
+                    <td>${h.describe_ax_attr(field_alias) or _('n/a')}</td>
+                    <!--!<td><code>${field_type}</code></td>-->
+                </tr>
+                </py:for>
+            </table>
+        </fieldset>
+      
+        <fieldset>
+            <legend>Proceed</legend>
+            <p>Allow this authentication to proceed?</p>
+        
+            <input class="btn btn-primary" type="submit" name="allow" value="${_('Allow')}" />
+            <input class="btn" type="submit" name="deny" value="${_('Deny')}" />
+            &nbsp;&nbsp;
+            <input type="checkbox" name="remember" value="yes"/><label class="inline" for="remember">Remember this decision</label>
+        </fieldset>
+    </form>
+  
+  </div> 
+  </py:match>
+
+  <xi:include href="../base.html" />
+
+</html>

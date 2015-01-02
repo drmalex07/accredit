@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:py="http://genshi.edgewall.org/" 
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:i18n="http://genshi.edgewall.org/i18n"
+  >
+  
+  <py:with vars="is_specified = c.identity.is_specified()">
+  <head>
+    <link rel="openid.server" href="${h.url_for('openid-provider', qualified=True, protocol='https')}" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <!--! The Yadis tag depends on the identifier being explicitly specified  -->
+    <meta py:if="not is_specified" http-equiv="x-xrds-location" 
+        content="${h.url_for('openid-yadis', qualified=True, protocol='https')}" />
+    <meta py:if="is_specified" http-equiv="x-xrds-location" 
+        content="${h.url_for('openid-yadis-with-uid', uid=c.identity.uid, qualified=True, protocol='https')}" />
+  </head>
+
+  <body>
+  <div>
+    <p>
+    This is an identity page for user 
+    <strong py:if="not is_specified">&lt;anybody&gt;</strong>
+    <strong py:if="is_specified">${c.identity.uid}</strong>
+    </p>
+  </div> 
+  </body>
+  </py:with>
+
+</html>

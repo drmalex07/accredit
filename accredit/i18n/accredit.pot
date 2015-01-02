@@ -1,0 +1,436 @@
+# Translations template for accredit.
+# Copyright (C) 2013 ORGANIZATION
+# This file is distributed under the same license as the accredit project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: accredit 0.4.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2013-11-04 22:27+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+
+#: accredit/controllers/users.py:75
+#, python-format
+msgid "Cleared %d policy objects"
+msgstr ""
+
+#: accredit/controllers/users.py:96
+#, python-format
+msgid "Revoked trust to %s"
+msgstr ""
+
+#: accredit/controllers/users.py:112
+msgid "Edit Trust"
+msgstr ""
+
+#: accredit/controllers/users.py:112
+msgid "Add Trust"
+msgstr ""
+
+#: accredit/controllers/users.py:145
+#, python-format
+msgid "Updated trust policy for %s"
+msgstr ""
+
+#: accredit/templates/base.html:17 accredit/themes/boo/templates/base.html:16
+msgid "This is a py:match placeholder"
+msgstr ""
+
+#: accredit/templates/home/index.html:20
+#: accredit/themes/boo/templates/home/index.html:20
+msgid "This is an index page!"
+msgstr ""
+
+#: accredit/templates/home/registry_dumps.html:12
+#: accredit/themes/boo/templates/home/registry_dumps.html:12
+msgid "Registry Dump"
+msgstr ""
+
+#: accredit/templates/home/registry_dumps.html:26
+#: accredit/themes/boo/templates/home/registry_dumps.html:26
+msgid "Registry Dump (Trust Policy)"
+msgstr ""
+
+#: accredit/templates/openid_provider/about.html:10
+#: accredit/themes/boo/templates/openid_provider/about.html:10
+msgid "This is an OpenID server endpoint!"
+msgstr ""
+
+#: accredit/templates/openid_provider/confirm.html:12
+#: accredit/themes/boo/templates/openid_provider/confirm.html:14
+msgid "Confirm"
+msgstr ""
+
+#: accredit/templates/openid_provider/confirm.html:28
+#: accredit/themes/boo/templates/openid_provider/confirm.html:26
+msgid "Confirm authentication request"
+msgstr ""
+
+#: accredit/templates/openid_provider/confirm.html:30
+#, python-format
+msgid ""
+"The site at [1:%(trust_root)s] has asked to confirm your identity.[2:]\n"
+"    If you approve, we will assert that you control the identity URI listed "
+"below."
+msgstr ""
+
+#: accredit/templates/openid_provider/confirm.html:36
+#: accredit/themes/boo/templates/openid_provider/confirm.html:34
+msgid "User:"
+msgstr ""
+
+#: accredit/templates/openid_provider/confirm.html:37
+#: accredit/themes/boo/templates/openid_provider/confirm.html:35
+msgid "Identity:"
+msgstr ""
+
+#: accredit/templates/openid_provider/confirm.html:38
+#: accredit/themes/boo/templates/openid_provider/confirm.html:36
+msgid "Trust Root:"
+msgstr ""
+
+#: accredit/templates/openid_provider/confirm.html:46
+#: accredit/themes/boo/templates/openid_provider/confirm.html:44
+msgid "Release the following personal (registration) data:"
+msgstr ""
+
+#: accredit/templates/openid_provider/confirm.html:50
+#: accredit/templates/openid_provider/confirm.html:67
+#: accredit/templates/users/edit_trust.html:61
+#: accredit/templates/users/edit_trust.html:79
+#: accredit/themes/boo/templates/openid_provider/confirm.html:48
+#: accredit/themes/boo/templates/openid_provider/confirm.html:65
+#: accredit/themes/boo/templates/users/edit_trust.html:61
+#: accredit/themes/boo/templates/users/edit_trust.html:79
+msgid "Attribute"
+msgstr ""
+
+#: accredit/templates/openid_provider/confirm.html:63
+#: accredit/themes/boo/templates/openid_provider/confirm.html:61
+msgid "Release the following attributes:"
+msgstr ""
+
+#: accredit/templates/openid_provider/confirm.html:68
+#: accredit/templates/users/edit_trust.html:80
+#: accredit/themes/boo/templates/openid_provider/confirm.html:66
+#: accredit/themes/boo/templates/users/edit_trust.html:80
+msgid "Description"
+msgstr ""
+
+#: accredit/templates/openid_provider/confirm.html:75
+#: accredit/templates/users/edit_trust.html:88 accredit/templates/users/me.html:51
+#: accredit/themes/boo/templates/openid_provider/confirm.html:73
+#: accredit/themes/boo/templates/users/edit_trust.html:88
+#: accredit/themes/boo/templates/users/me.html:51
+msgid "n/a"
+msgstr ""
+
+#: accredit/templates/openid_provider/confirm.html:82
+#: accredit/themes/boo/templates/openid_provider/confirm.html:80
+msgid "Allow this authentication to proceed?"
+msgstr ""
+
+#: accredit/templates/openid_provider/confirm.html:84
+#: accredit/themes/boo/templates/openid_provider/confirm.html:82
+msgid "Allow"
+msgstr ""
+
+#: accredit/templates/openid_provider/confirm.html:85
+#: accredit/themes/boo/templates/openid_provider/confirm.html:83
+msgid "Deny"
+msgstr ""
+
+#: accredit/templates/openid_provider/confirm.html:86
+#: accredit/themes/boo/templates/openid_provider/confirm.html:84
+msgid "Remember this decision"
+msgstr ""
+
+#: accredit/templates/openid_provider/identity.html:22
+#: accredit/themes/boo/templates/openid_provider/identity.html:22
+msgid "This is an identity page for user"
+msgstr ""
+
+#: accredit/templates/openid_provider/identity.html:24
+#: accredit/themes/boo/templates/openid_provider/identity.html:24
+msgid "<anybody>"
+msgstr ""
+
+#: accredit/templates/openid_provider/other-identity.html:12
+#: accredit/themes/boo/templates/openid_provider/other-identity.html:13
+#, python-format
+msgid ""
+"The site at [1:%(trust_root)s] has asked for an identity belonging to "
+"[2:%(expected_identity)s], \n"
+"     but you are logged-in as [3:%(own_identity)s] i.e "
+"[4:[5:%(own_identity_uri)s]]."
+msgstr ""
+
+#: accredit/templates/openid_provider/other-identity.html:16
+#: accredit/themes/boo/templates/openid_provider/other-identity.html:17
+#, python-format
+msgid ""
+"To login as [1:%(expected_identity)s] and approve the login request, you must"
+" [2:logout] first."
+msgstr ""
+
+#: accredit/templates/openid_provider/response-form.html:11
+#: accredit/themes/boo/templates/openid_provider/response-form.html:11
+msgid "Redirection to RP"
+msgstr ""
+
+#: accredit/templates/openid_provider/response-form.html:20
+#: accredit/themes/boo/templates/openid_provider/response-form.html:20
+msgid "Redirecting to"
+msgstr ""
+
+#: accredit/templates/users/clear_all_trust.html:12
+#: accredit/themes/boo/templates/users/clear_all_trust.html:12
+msgid "Clear Trusts"
+msgstr ""
+
+#: accredit/templates/users/clear_all_trust.html:25
+#: accredit/themes/boo/templates/users/clear_all_trust.html:25
+msgid "Clear Trusts?"
+msgstr ""
+
+#: accredit/templates/users/clear_all_trust.html:28
+#: accredit/themes/boo/templates/users/clear_all_trust.html:28
+msgid "Are you sure you want to clear every defined policy?"
+msgstr ""
+
+#: accredit/templates/users/clear_all_trust.html:29
+#: accredit/themes/boo/templates/users/clear_all_trust.html:29
+msgid ""
+"If you proceed, all subsequent authentication requests will prompt for your "
+"approval."
+msgstr ""
+
+#: accredit/templates/users/clear_all_trust.html:31
+#: accredit/templates/users/clear_trust.html:31 accredit/templates/users/me.html:60
+#: accredit/themes/boo/templates/users/clear_all_trust.html:31
+#: accredit/themes/boo/templates/users/clear_trust.html:31
+#: accredit/themes/boo/templates/users/me.html:60
+msgid "Clear"
+msgstr ""
+
+#: accredit/templates/users/clear_all_trust.html:32
+#: accredit/templates/users/clear_trust.html:32
+#: accredit/templates/users/edit_trust.html:97
+#: accredit/themes/boo/templates/users/clear_all_trust.html:32
+#: accredit/themes/boo/templates/users/clear_trust.html:32
+#: accredit/themes/boo/templates/users/edit_trust.html:97
+msgid "Cancel"
+msgstr ""
+
+#: accredit/templates/users/clear_trust.html:12
+#: accredit/themes/boo/templates/users/clear_trust.html:12
+msgid "Clear Trust"
+msgstr ""
+
+#: accredit/templates/users/clear_trust.html:25
+#: accredit/themes/boo/templates/users/clear_trust.html:25
+msgid "Clear Trust?"
+msgstr ""
+
+#: accredit/templates/users/clear_trust.html:28
+#: accredit/themes/boo/templates/users/clear_trust.html:28
+#, python-format
+msgid "Are you sure you want to clear trust to [1:%(realm)s] ?"
+msgstr ""
+
+#: accredit/templates/users/dump.html:12
+#: accredit/themes/boo/templates/users/dump.html:12
+msgid "Dump"
+msgstr ""
+
+#: accredit/templates/users/dump.html:30
+#: accredit/themes/boo/templates/users/dump.html:30
+msgid "Your repoze.who.identity is:"
+msgstr ""
+
+#: accredit/templates/users/edit_trust.html:37
+#: accredit/themes/boo/templates/users/edit_trust.html:37
+msgid "Realm:"
+msgstr ""
+
+#: accredit/templates/users/edit_trust.html:43
+#: accredit/themes/boo/templates/users/edit_trust.html:43
+msgid "Allow requests:"
+msgstr ""
+
+#: accredit/templates/users/edit_trust.html:45
+#: accredit/themes/boo/templates/users/edit_trust.html:45
+msgid "Always"
+msgstr ""
+
+#: accredit/templates/users/edit_trust.html:46
+#: accredit/themes/boo/templates/users/edit_trust.html:46
+msgid "Never"
+msgstr ""
+
+#: accredit/templates/users/edit_trust.html:49
+#: accredit/themes/boo/templates/users/edit_trust.html:49
+msgid "For the next 1 hour"
+msgstr ""
+
+#: accredit/templates/users/edit_trust.html:50
+#: accredit/themes/boo/templates/users/edit_trust.html:50
+msgid "For the next 24 hours"
+msgstr ""
+
+#: accredit/templates/users/edit_trust.html:51
+#: accredit/themes/boo/templates/users/edit_trust.html:51
+msgid "For the next 15 days"
+msgstr ""
+
+#: accredit/templates/users/edit_trust.html:52
+#: accredit/themes/boo/templates/users/edit_trust.html:52
+msgid "Forever"
+msgstr ""
+
+#: accredit/templates/users/edit_trust.html:96
+#: accredit/themes/boo/templates/users/edit_trust.html:96
+msgid "Save"
+msgstr ""
+
+#: accredit/templates/users/login_form.html:4
+#: accredit/templates/users/login_redirecting_form.html:12
+#: accredit/themes/boo/templates/users/login_form.html:4
+#: accredit/themes/boo/templates/users/login_redirecting_form.html:12
+msgid "Login"
+msgstr ""
+
+#: accredit/templates/users/login_form.html:15
+#: accredit/themes/boo/templates/users/login_form.html:15
+msgid "Login into"
+msgstr ""
+
+#: accredit/templates/users/login_form.html:15
+#: accredit/themes/boo/templates/users/login_form.html:15
+msgid "accredit"
+msgstr ""
+
+#: accredit/templates/users/login_form.html:15
+#: accredit/themes/boo/templates/users/login_form.html:15
+msgid "app!"
+msgstr ""
+
+#: accredit/templates/users/login_form.html:19
+#: accredit/themes/boo/templates/users/login_form.html:19
+msgid "User"
+msgstr ""
+
+#: accredit/templates/users/login_form.html:23
+#: accredit/themes/boo/templates/users/login_form.html:23
+msgid "Password"
+msgstr ""
+
+#: accredit/templates/users/login_redirecting_form.html:27
+#: accredit/themes/boo/templates/users/login_redirecting_form.html:27
+#, python-format
+msgid "Login into [1:%(site_name)s] app!"
+msgstr ""
+
+#: accredit/templates/users/login_redirecting_form.html:30
+#: accredit/templates/users/me.html:50
+#: accredit/themes/boo/templates/users/login_redirecting_form.html:30
+#: accredit/themes/boo/templates/users/me.html:50
+msgid "Username:"
+msgstr ""
+
+#: accredit/templates/users/login_redirecting_form.html:34
+#: accredit/themes/boo/templates/users/login_redirecting_form.html:34
+msgid "Password:"
+msgstr ""
+
+#: accredit/templates/users/login_redirecting_form.html:39
+#: accredit/themes/boo/templates/users/login_redirecting_form.html:39
+msgid "Login!"
+msgstr ""
+
+#: accredit/templates/users/me.html:12
+#: accredit/themes/boo/templates/users/me.html:12
+msgid "Me!"
+msgstr ""
+
+#: accredit/templates/users/me.html:39
+#: accredit/themes/boo/templates/users/me.html:39
+msgid "Logout"
+msgstr ""
+
+#: accredit/templates/users/me.html:47
+#: accredit/themes/boo/templates/users/me.html:47
+msgid "You have been identified as:"
+msgstr ""
+
+#: accredit/templates/users/me.html:51
+#: accredit/themes/boo/templates/users/me.html:51
+msgid "Name:"
+msgstr ""
+
+#: accredit/templates/users/me.html:52
+#: accredit/themes/boo/templates/users/me.html:52
+msgid "Identity URI:"
+msgstr ""
+
+#: accredit/templates/users/me.html:53
+#: accredit/themes/boo/templates/users/me.html:53
+msgid "repoze.who.userid:"
+msgstr ""
+
+#: accredit/templates/users/me.html:56
+#: accredit/themes/boo/templates/users/me.html:56
+msgid "You have granted trust to the following applications (realms/domains):"
+msgstr ""
+
+#: accredit/templates/users/me.html:59
+#: accredit/themes/boo/templates/users/me.html:59
+msgid "Add"
+msgstr ""
+
+#: accredit/templates/users/me.html:64
+#: accredit/themes/boo/templates/users/me.html:64
+msgid "Application"
+msgstr ""
+
+#: accredit/templates/users/me.html:64
+#: accredit/themes/boo/templates/users/me.html:64
+msgid "Trust"
+msgstr ""
+
+#: accredit/templates/users/me.html:64
+#: accredit/themes/boo/templates/users/me.html:64
+msgid "Operations"
+msgstr ""
+
+#: accredit/templates/users/me.html:67
+#: accredit/themes/boo/templates/users/me.html:67
+msgid "edit"
+msgstr ""
+
+#: accredit/templates/users/me.html:68
+#: accredit/themes/boo/templates/users/me.html:68
+msgid "clear"
+msgstr ""
+
+#: accredit/templates/users/me.html:72
+#: accredit/themes/boo/templates/users/me.html:72
+msgid "No trusts found"
+msgstr ""
+
+#: accredit/themes/boo/templates/openid_provider/confirm.html:28
+#, python-format
+msgid ""
+"The site at [1:[2:%(trust_root)s]] has asked to confirm your identity.[3:]\n"
+"    If you approve, we will assert that you control the identity URI listed "
+"below."
+msgstr ""
+

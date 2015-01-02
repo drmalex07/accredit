@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:py="http://genshi.edgewall.org/" 
+    xmlns:xi="http://www.w3.org/2001/XInclude" 
+    xmlns:i18n="http://genshi.edgewall.org/i18n"
+  >
+
+  <py:match path="head" once="true" >
+  <head>
+    ${select('*')} 
+    <title>Clear Trusts</title>
+    <style>
+        form {
+            border: 0px;
+            padding: 0px 0px;
+        }
+    </style>
+  </head>
+  </py:match>
+
+  <py:match path="body/div[@id='content']" once="true" >
+  <div id="${select('@id')}" class="page ${select('@class')}">
+
+  <h1>Clear Trusts?</h1> 
+  
+  <form method="POST" action="${c.action}">
+    <h4>Are you sure you want to clear every defined policy?</h4>
+    <p>If you proceed, all subsequent authentication requests will prompt for your approval.</p>
+    ${c.csrf_token_field}
+    <input type="submit" name="clear" value="${_('Clear')}"/>
+    <input type="submit" name="cancel" value="${_('Cancel')}"/>
+  </form>
+
+  </div>
+  </py:match>
+
+  <xi:include href="../base.html" />
+
+</html>

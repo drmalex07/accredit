@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:py="http://genshi.edgewall.org/" 
+    xmlns:xi="http://www.w3.org/2001/XInclude" 
+  >
+
+  <py:match path="head" once="true" >
+  <head>
+    ${select('*')} 
+    <title>Redirection to RP</title>
+    <style>
+        body { background: #fff; }
+    </style>
+  </head>
+  </py:match>
+
+  <py:match path="body/div[@id='content']" once="true" >
+  <div style="display:none">${body}</div>
+  <p>Redirecting to ${c.trust_root} ...</p>
+  </py:match>
+  
+  <xi:include href="../base.html" />
+  
+  <script type="text/javascript">
+    /* auto submit! */
+    $(document).ready(function () {
+      $('form').submit();  
+    })    
+  </script>
+</html>

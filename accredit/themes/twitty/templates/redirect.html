@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:py="http://genshi.edgewall.org/" 
+    xmlns:xi="http://www.w3.org/2001/XInclude" 
+  >
+  <py:match path="head" once="true" >
+  <head>
+    ${select('*')} 
+    <title>Redirection</title>
+    <meta http-equiv="Refresh" content="0; URL=${c.redirection_url}" />
+    <style>
+        body { background: #fff; font-size:12px; font-family: sans-serif; }
+    </style>
+  </head>
+  </py:match>
+
+  <py:match path="body/div[@id='content']" once="true" >
+  <p>Redirecting to ${c.redirection_url} ...</p>
+  </py:match>
+  
+  <xi:include href="base.html" />
+</html>

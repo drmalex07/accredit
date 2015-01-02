@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:py="http://genshi.edgewall.org/" 
+    xmlns:xi="http://www.w3.org/2001/XInclude" 
+    xmlns:i18n="http://genshi.edgewall.org/i18n"
+  >
+
+  <py:match path="head" once="true" >
+  <head>
+    ${select('*')} 
+    <title>Dump</title>
+    <link type="text/css" rel="stylesheet" href="/vendor/highlight.js/styles/default.css" />
+    <script type="text/javascript" src="/vendor/highlight.js/highlight.pack.js"></script>
+    <script type="text/javascript" >hljs.initHighlightingOnLoad();</script>
+    <style>
+        body { background-color: #fff; }
+        h2 { color: #555; }
+        p.small { font-size: 10px; color: #777; }
+        dt { font-weight: bold; }
+    </style>
+  </head>
+  </py:match>
+
+  <py:match path="body/div[@id='content']" once="true" >
+  <py:with vars="userid=c.who_identity.get('repoze.who.userid')">
+  <div id="${select('@id')}" class="${select('@class')}">
+  <h2><em>${userid}</em></h2>  
+  <p>
+    <span>Your repoze.who.identity is:</span> 
+    <py:for each="k,v in c.who_identity.items()">
+    <dt><code>${k}</code></dt>
+    <dd><pre><code class="json">${h.json.dumps(v,indent=3)}</code></pre></dd>
+    </py:for>
+  </p>
+  </div>
+  </py:with>
+  </py:match>
+
+  <xi:include href="../base.html" />
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:py="http://genshi.edgewall.org/" 
+    xmlns:xi="http://www.w3.org/2001/XInclude" 
+  >
+  <py:match path="head" once="true" >
+    <head>
+      ${select('*')}
+      <style>
+      body {
+        color: #333333;
+        font-family: 'Tahoma',sans-serif;
+        font-size: 12px;
+        line-height: 18px;
+      }
+      </style>
+    </head>
+  </py:match>
+
+  <py:match path="body/div[@id='content']" once="true" >
+  <div id="${select('@id')}" class="${select('@class')}">
+    <p>This is an OpenID server endpoint!</p>
+  </div> 
+  </py:match>
+  
+  <xi:include href="../base.html" />
+
+</html>

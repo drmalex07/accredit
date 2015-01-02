@@ -1,0 +1,11 @@
+*.pyc
+
+data
+certs
+
+accredit.egg-info/
+plugins/devdsa_accredit/devdsa_accredit.egg-info/
+
+accredit/i18n/**/LC_MESSAGES/accredit.mo
+
+development-*.ini
